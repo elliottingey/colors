@@ -13,7 +13,7 @@ function clickMe(){
  
 }
 
-//const color = document.querySelector(".background-color");
+
 
 function randomize(){
   //outputs a random 6 digit string with # in front to make randomized hex code
@@ -24,9 +24,11 @@ function randomize(){
   }
 
   alert(randColor);
-  window.alert(document.getElementById('bodyID'));
-  var elem = document.getElementById('bodyID')?.innerHTML;
-  window.alert(elem);
+  //window.alert(document.getElementById('bodyID'));
+  //var elem = document.getElementById('bodyID')?.innerHTML;
+ // window.alert(elem);
+ 
+ return randColor
   //var elem = document.getElementById('bruh');
   //alert(elem)
   
@@ -34,6 +36,9 @@ function randomize(){
   //document.body.style.backgroundColor = randColor;
 }
 
+
+
+//const colorA = randColor;
 
 function App() {
   return (
@@ -57,7 +62,7 @@ function App() {
 
       </header>
 
-      <body className="App-body" id="bodyID" style={{ color: "red"}}>
+      <body className="App-body" id="bodyID" style={{ backgroundColor: "red"}}>
         
         <p>bruh 2</p>
 
