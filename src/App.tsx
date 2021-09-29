@@ -13,22 +13,27 @@ function clickMe(){
  
 }
 
-
+//const color = document.querySelector(".background-color");
 
 function randomize(){
+  //outputs a random 6 digit string with # in front to make randomized hex code
   var alphaNumeric = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890';
-  var result = '';
+  var randColor = '#';
   for (var i=0; i < 6; i++){
-    result += alphaNumeric.charAt(Math.floor(Math.random() * alphaNumeric.length));
+    randColor += alphaNumeric.charAt(Math.floor(Math.random() * alphaNumeric.length));
   }
 
-  alert(result);
-  //document.getElementById(bruh).style.backgroundColor = result
-
-  var elem = document.getElementById('bruh');
-  alert(elem)
-  document.body.style.backgroundColor = result;
+  alert(randColor);
+  window.alert(document.getElementById('bodyID'));
+  var elem = document.getElementById('bodyID')?.innerHTML;
+  window.alert(elem);
+  //var elem = document.getElementById('bruh');
+  //alert(elem)
+  
+ // var colorChange = document.getElementById('bruh');//.style.backgroundColor = 'Red';
+  //document.body.style.backgroundColor = randColor;
 }
+
 
 function App() {
   return (
@@ -52,14 +57,18 @@ function App() {
 
       </header>
 
-      <body>
+      <body className="App-body" id="bodyID" style={{ color: "red"}}>
         
-        <p>bruh</p>
+        <p>bruh 2</p>
 
       </body>
-
+      
+        
+      
 
     </div>
+
+   
   );
 }
 
