@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 
 
 import './App.css';
@@ -56,10 +55,6 @@ function App() {
       <header className="App-header">
       <h1> Background Color Selector</h1>
 
-
-        <img src={logo} className="App-logo" alt="logo" />
-  
-
         <p id="bruh">bruh</p>
 
       </header>
@@ -68,10 +63,12 @@ function App() {
       <p>bruh 2</p>
       
       <div>
-        <button className="button-13" onClick={insertRandomColor}>Randomize</button>
-        <button className="button-13">Custom</button>
-        <button className="button-13" onClick={resetColor}>Reset</button>
-        <button className="button-13">History</button>
+        <button className="button-action" onClick={insertRandomColor}>Randomize</button>
+
+        <button className="button-dropdown">Custom</button>
+
+        <button className="button-action" onClick={resetColor}>Reset</button>
+        <button className="button-dropdown">History</button>
       </div>
         
 
