@@ -17,58 +17,38 @@ function clickMe(){
 
 function randomize(){
   //outputs a random 6 digit string with # in front to make randomized hex code
-  /*
-  var alphaNumeric = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890';
-  var randColor = '#';
-  for (var i=0; i < 6; i++){
-    randColor += alphaNumeric.charAt(Math.floor(Math.random() * alphaNumeric.length));
-  */
-  
-    var randColor = "#" + Math.floor(Math.random()*16777215).toString(16);
+  var randColor = "#" + Math.floor(Math.random()*16777215).toString(16);
   //alert(randomColor);
-  
-
-  //alert(randColor);
-  //window.alert(document.getElementById('bodyID'));
-  //var elem = document.getElementById('bodyID')?.innerHTML;
- // window.alert(elem);
- 
- 
-  
-  //alert(elem)
-  
- // var colorChange = document.getElementById('bruh');//.style.backgroundColor = 'Red';
- 
- //const elem = document.getElementById("bodyID");
-
 
   return randColor;
 }
 
 function insertRandomColor(){
- // const getBodyElem = document.querySelector<HTMLElement>(".App-body");
-
+  //calls randomize() then inserts into correct body <div>
   var insertColor = randomize();
-  //alert('bruh');
+  
   //alert(insertColor);
-
-  //if (getBodyElem !== null){
-    //alert(getBodyElem.background-color);
- // }
-console.log(insertColor);
+  console.log(insertColor);
 
 
   var getBodyElem = document.getElementById('bodyID')!;
- getBodyElem.style.backgroundColor = insertColor;
+  getBodyElem.style.backgroundColor = insertColor;
+
   return insertColor;
 }
 
-//function insertRandomColor(var colorInsert){
-  //var colorA = colorInsert;
-  //return colorA;
-//}
+function resetColor(){
+  var getBodyElem = document.getElementById('bodyID')!;
 
-//const colorA = randColor;
+  console.log(getBodyElem.style.backgroundColor);
+
+  //TODO fix this alert. console prints rbg values, not sure why
+  if (getBodyElem.style.backgroundColor === "#123456"){
+    alert("Default site color is already selected.")
+  }
+  
+  getBodyElem.style.backgroundColor = "#123456";
+}
 
 function App() {
   return (
@@ -84,13 +64,13 @@ function App() {
 
       </header>
 
-      <body className="App-body" id="bodyID" style={{ backgroundColor: "#mv2Htj"}}>
+      <body className="App-body" id="bodyID">
       <p>bruh 2</p>
       
       <div>
         <button className="button-13" onClick={insertRandomColor}>Randomize</button>
         <button className="button-13">Custom</button>
-        <button className="button-13">Reset</button>
+        <button className="button-13" onClick={resetColor}>Reset</button>
         <button className="button-13">History</button>
       </div>
         
