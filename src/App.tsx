@@ -56,34 +56,33 @@ function App() {
 
 
       <body className="App-body" id="bodyID">
-      <p>bruh 2</p>
-      
-      <div>
-        <button className="button-action" onClick={insertRandomColor}>Randomize</button>
-   
-        <div className="dropdown">
-          <button className="dropbtn">History</button>
-          <div className="dropdown-content">
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
-          </div>
+        
+        <div>
+          <button className="button-action" onClick={insertRandomColor}>Randomize</button>
+          <button className="button-action" onClick={resetColor}>Reset</button>
         </div>
 
-        <button className="button-action" onClick={resetColor}>Reset</button>
-
-
-        <div className="dropdown">
-          <button className="dropbtn">History</button>
-          <div className="dropdown-content">
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
+        <div>
+          <div className="dropdown">
+            <button className="dropbtn">Custom</button>
+            <div className="dropdown-content" style={{right:10}}>
+              <a href="#">Link 1</a>
+              <a href="#">Link 2</a>
+              <a href="#">Link 3</a>
+            </div>
           </div>
+
+          <div className="dropdown">
+            <button className="dropbtn">History</button>
+            <div className="dropdown-content" style={{left:10}}>
+              <a href="#">Link 1</a>
+              <a href="#">Link 2</a>
+              <a href="#">Link 3</a>
+            </div>
+          </div>
+
+
         </div>
-     
-      </div>
-  
       </body>
 
     </div>
