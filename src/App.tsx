@@ -28,15 +28,38 @@ function randomize(){
   //var elem = document.getElementById('bodyID')?.innerHTML;
  // window.alert(elem);
  
- return randColor
+ 
   //var elem = document.getElementById('bruh');
   //alert(elem)
   
  // var colorChange = document.getElementById('bruh');//.style.backgroundColor = 'Red';
-  //document.body.style.backgroundColor = randColor;
+ 
+ //const elem = document.getElementById("bodyID");
+
+
+  return randColor
 }
 
+function insertRandomColor(){
+ // const getBodyElem = document.querySelector<HTMLElement>(".App-body");
 
+  var insertColor = randomize();
+  alert('bruh');
+  alert(insertColor);
+
+  //if (getBodyElem !== null){
+    //alert(getBodyElem.background-color);
+ // }
+
+
+ // getBodyElem.style.backgroundColor = "red";
+  return insertColor;
+}
+
+//function insertRandomColor(var colorInsert){
+  //var colorA = colorInsert;
+  //return colorA;
+//}
 
 //const colorA = randColor;
 
@@ -46,12 +69,7 @@ function App() {
       <header className="App-header">
       <h1> Background Color Selector</h1>
 
-      <div>
-        <button className="button-13" onClick={randomize}>Randomize</button>
-        <button className="button-13">Custom</button>
-        <button className="button-13">Reset</button>
-        <button className="button-13">History</button>
-      </div>
+
 
    
 
@@ -62,14 +80,18 @@ function App() {
 
       </header>
 
-      <body className="App-body" id="bodyID" style={{ backgroundColor: "red"}}>
+      <body className="App-body" id="bodyID" style={{ backgroundColor: "#098765"}}>
+      <p>bruh 2</p>
+      
+      <div>
+        <button className="button-13" onClick={insertRandomColor}>Randomize</button>
+        <button className="button-13">Custom</button>
+        <button className="button-13">Reset</button>
+        <button className="button-13">History</button>
+      </div>
         
-        <p>bruh 2</p>
 
       </body>
-      
-        
-      
 
     </div>
 
