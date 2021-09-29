@@ -1,13 +1,33 @@
 import React from 'react';
 import logo from './logo.svg';
-import Button from 'react-bootstrap/Button';
+
 
 import './App.css';
 
 
 
+
+
 function clickMe(){
-  alert('you clicked me!');
+  alert(Math.random());
+ 
+}
+
+
+
+function randomize(){
+  var alphaNumeric = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890';
+  var result = '';
+  for (var i=0; i < 6; i++){
+    result += alphaNumeric.charAt(Math.floor(Math.random() * alphaNumeric.length));
+  }
+
+  alert(result);
+  //document.getElementById(bruh).style.backgroundColor = result
+
+  var elem = document.getElementById('bruh');
+  alert(elem)
+  document.body.style.backgroundColor = result;
 }
 
 function App() {
@@ -17,19 +37,24 @@ function App() {
       <h1> Background Color Selector</h1>
 
       <div>
-        <button onClick={clickMe}>Button</button>
-        <Button className="btn btn-primary" onClick={clickMe}>Button2</Button>
-        <Button variant="primary">bruh</Button>
+        <button className="button-13" onClick={randomize}>Randomize</button>
+        <button className="button-13">Custom</button>
+        <button className="button-13">Reset</button>
+        <button className="button-13">History</button>
       </div>
 
+   
+
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
+  
+
+        <p id="bruh">bruh</p>
+
       </header>
 
       <body>
         
+        <p>bruh</p>
 
       </body>
 
