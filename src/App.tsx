@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { NavDropdown } from 'react-bootstrap';
 
 import './App.css';
 
@@ -65,7 +65,15 @@ function App() {
       <div>
         <button className="button-action" onClick={insertRandomColor}>Randomize</button>
 
-        <button className="button-dropdown">Custom</button>
+        <div className="dropdown">
+          <button className="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+            <span className="caret">Custom</span></button>
+              <ul className="dropdown-menu">
+                <li>Bruh1</li>
+                <li>Bruh2</li>
+              </ul>
+        </div>
+        
 
         <button className="button-action" onClick={resetColor}>Reset</button>
         <button className="button-dropdown">History</button>
