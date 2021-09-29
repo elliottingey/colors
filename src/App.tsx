@@ -63,28 +63,30 @@ function App() {
       
       <div>
         <button className="button-action" onClick={insertRandomColor}>Randomize</button>
-
    
-        
-   
-        <button className="dropdown">
-          <span>Custom</span>
+        <div className="dropdown">
+          <button className="dropbtn">History</button>
           <div className="dropdown-content">
-            <p>Hello World!</p>
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
           </div>
-        </button>
+        </div>
 
-    
         <button className="button-action" onClick={resetColor}>Reset</button>
-        <button className="dropdown">
-          <span>Custom</span>
-          <div className="dropdown-content">
-            <p>Hello World!</p>
-          </div>
-        </button>
-      </div>
-        
 
+
+        <div className="dropdown">
+          <button className="dropbtn">History</button>
+          <div className="dropdown-content">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+          </div>
+        </div>
+     
+      </div>
+  
       </body>
 
     </div>
