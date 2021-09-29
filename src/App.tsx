@@ -1,15 +1,7 @@
 import React from 'react';
-import { Dropdown, DropdownButton,ButtonGroup,Button} from 'react-bootstrap';
 import './App.css';
 
 
-
-
-
-function clickMe(){
-  alert(Math.random());
- 
-}
 
 
 
@@ -48,15 +40,20 @@ function resetColor(){
   getBodyElem.style.backgroundColor = "#123456";
 }
 
+var siteColor = '123456';
+//TODO add correct color appearing and changing
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-      <h1> Background Color Selector</h1>
+      <h1 className="h1title"> Background Color Selector</h1>
 
-        <p id="bruh">bruh</p>
+      
+      <h2>Your Color: #{siteColor}</h2>
 
       </header>
+
+
 
       <body className="App-body" id="bodyID">
       <p>bruh 2</p>
