@@ -114,6 +114,9 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  -webkit-text-fill-color: white;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
 }
 
 .App-body {

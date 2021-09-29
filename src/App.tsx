@@ -13,6 +13,7 @@ function randomize(){
   return randColor;
 }
 
+
 function insertRandomColor(){
   //calls randomize() then inserts into correct body <div>
   var insertColor = randomize();
@@ -20,17 +21,21 @@ function insertRandomColor(){
   //alert(insertColor);
   console.log(insertColor);
 
-
+  var getHeaderElem = document.getElementById('headerID')!;
   var getBodyElem = document.getElementById('bodyID')!;
+
+  getHeaderElem.style.backgroundColor = insertColor;
   getBodyElem.style.backgroundColor = insertColor;
 
   return insertColor;
 }
 
+
+
 function resetColor(){
   var getBodyElem = document.getElementById('bodyID')!;
-
-  console.log(getBodyElem.style.backgroundColor);
+  var getHeaderElem = document.getElementById('headerID')!;
+  //console.log(getBodyElem.style.backgroundColor);
 
   //TODO fix this alert. console prints rbg values, not sure why
   if (getBodyElem.style.backgroundColor === "#123456"){
@@ -38,14 +43,17 @@ function resetColor(){
   }
   
   getBodyElem.style.backgroundColor = "#123456";
+  getHeaderElem.style.backgroundColor = "#123456";
 }
+
+
 
 var siteColor = '123456';
 //TODO add correct color appearing and changing
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      <header className="App-header" id="headerID">
       <h1 className="h1title"> Background Color Selector</h1>
 
       
