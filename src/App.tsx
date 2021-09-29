@@ -17,19 +17,24 @@ function clickMe(){
 
 function randomize(){
   //outputs a random 6 digit string with # in front to make randomized hex code
+  /*
   var alphaNumeric = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890';
   var randColor = '#';
   for (var i=0; i < 6; i++){
     randColor += alphaNumeric.charAt(Math.floor(Math.random() * alphaNumeric.length));
-  }
+  */
+  
+    var randColor = "#" + Math.floor(Math.random()*16777215).toString(16);
+  //alert(randomColor);
+  
 
-  alert(randColor);
+  //alert(randColor);
   //window.alert(document.getElementById('bodyID'));
   //var elem = document.getElementById('bodyID')?.innerHTML;
  // window.alert(elem);
  
  
-  //var elem = document.getElementById('bruh');
+  
   //alert(elem)
   
  // var colorChange = document.getElementById('bruh');//.style.backgroundColor = 'Red';
@@ -37,22 +42,24 @@ function randomize(){
  //const elem = document.getElementById("bodyID");
 
 
-  return randColor
+  return randColor;
 }
 
 function insertRandomColor(){
  // const getBodyElem = document.querySelector<HTMLElement>(".App-body");
 
   var insertColor = randomize();
-  alert('bruh');
-  alert(insertColor);
+  //alert('bruh');
+  //alert(insertColor);
 
   //if (getBodyElem !== null){
     //alert(getBodyElem.background-color);
  // }
+console.log(insertColor);
 
 
- // getBodyElem.style.backgroundColor = "red";
+  var getBodyElem = document.getElementById('bodyID')!;
+ getBodyElem.style.backgroundColor = insertColor;
   return insertColor;
 }
 
@@ -70,9 +77,6 @@ function App() {
       <h1> Background Color Selector</h1>
 
 
-
-   
-
         <img src={logo} className="App-logo" alt="logo" />
   
 
@@ -80,7 +84,7 @@ function App() {
 
       </header>
 
-      <body className="App-body" id="bodyID" style={{ backgroundColor: "#098765"}}>
+      <body className="App-body" id="bodyID" style={{ backgroundColor: "#mv2Htj"}}>
       <p>bruh 2</p>
       
       <div>
