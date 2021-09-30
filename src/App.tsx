@@ -70,6 +70,22 @@ function ModeSelect(modeEnter: string) {
     console.log(mode);
 }
 **/
+function ModeSelect(modeEnter: string) {
+  const [mode, setMode] = useState<string>('');
+
+  return (
+    <div>
+      <p>You entered {mode}</p>
+      <button onClick={() => setMode(modeEnter)}>
+        Click me
+      </button>
+    </div>
+  );
+}
+
+
+
+
 
 function Bruh(numberEnter: number){
   const [num, setNum] = useState(0);
@@ -142,7 +158,7 @@ function App() {
       
       <body className="App-body" id="bodyID">
       {Bruh(8)}
-      {Bruh(10)}
+      {ModeSelect('please god i want this to just work')}
 
             <div>
       <div className="dropdown">
