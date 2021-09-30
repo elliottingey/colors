@@ -1,15 +1,44 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 
 
 
 var mode ='RGB'
-function changeModeTo(mode: string){
-  if (mode === 'RGB'|| mode === 'HEX'|| mode === 'PICKER'){
-    return mode;
+var colorType = 'RGB';
+
+
+function modeCheck(modeSelect: string){
+  if (modeSelect === 'RGB'){
+    mode = 'RGB';
   }
+  else if (modeSelect === 'HEX'){
+    mode = 'HEX';
+  }
+  else if (modeSelect === 'picker'){
+    mode = 'picker';
+  }
+  modeHeader();
+  //alert(mode);
+  return mode;
 }
 
+//TODO add function here to find appropriate values
+
+//TODO add image of color picker
+function modeHeader(){
+  //var modeSelect = modeCheck(mode);
+  var colorHeader;
+  if (mode === 'RGB'){
+    colorHeader = 'Selected RGB Colors:  Red:{RGBred}  Green:{RGBgreen}  Blue:{RGBblue}';
+  }
+  else if (mode === 'HEX'){
+    colorHeader = 'Selected Hex Code: #';
+  }
+  else if (mode === 'picker'){
+    colorHeader = 'Selected RGB Colors:  Red:{RGBred}  Green:{RGBgreen}  Blue:{RGBblue}';
+  }
+  return colorHeader;
+}
 
 function randomize(){
   //outputs a random 6 digit string with # in front to make randomized hex code
@@ -60,8 +89,18 @@ function RBGTextChange() {
 
 }
 
+function Example() {
+  
+  const [count, setCount] = useState(0);
 
-var colorType = 'RGB';
+  return (
+    <div>
+      <p>{count} times</p>
+      <button onClick={() => setCount(count + 1)} >Click Me Bruh</button>
+    </div>
+  );
+}
+
 var hexSiteColor = '123456';
 var RGBred = '18';
 var RGBgreen = '52';
@@ -74,15 +113,16 @@ function App() {
     <div className="App">
       <header className="App-header" id="headerID">
 
+     
       <h1 className="h1title"> Background Color Selector</h1>
-      <h2 className="h2title">Color Formatting Selected: {colorType}</h2>
-      <h2 className="h2title2">Your Colors:  Red:{RGBred}  Green:{RGBgreen}  Blue:{RGBblue}</h2>
+      <h2 className="h2title">Color Formatting Selected: {modeCheck(mode)}</h2>
+      <h2 className="h2title2">{modeHeader}</h2>
 
       </header>
 
-
+      
       <body className="App-body" id="bodyID">
-        
+        {Example()}
         <div>
           <button className="button-action" onClick={insertRandomColor}>Randomize</button>
           <button className="button-action" onClick={resetColor}>Reset</button>
@@ -94,7 +134,6 @@ function App() {
             <div className="dropdown-content" style={{right:10}}>
               <div><button className="custom-drop-btn">rgb</button></div>
               <div><button className="custom-drop-btn">Hex Values</button></div>
-
               <div><button className="custom-drop-btn">color picker</button></div>
               <div><a href="#">Link 3</a></div>
             </div>
