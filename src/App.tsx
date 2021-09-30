@@ -3,6 +3,12 @@ import './App.css';
 
 
 
+var mode ='RGB'
+function changeModeTo(mode: string){
+  if (mode === 'RGB'|| mode === 'HEX'|| mode === 'PICKER'){
+    return mode;
+  }
+}
 
 
 function randomize(){
@@ -88,8 +94,8 @@ function App() {
             <div className="dropdown-content" style={{right:10}}>
               <div><button className="custom-drop-btn">rgb</button></div>
               <div><button className="custom-drop-btn">Hex Values</button></div>
-              <div><button className="custom-drop-btn">hsla</button></div>
-              <div><button className="custom-drop-btn">RBG</button></div>
+
+              <div><button className="custom-drop-btn">color picker</button></div>
               <div><a href="#">Link 3</a></div>
             </div>
           </div>
