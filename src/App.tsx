@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { createImportSpecifier } from 'typescript';
 import './App.css';
 
 
@@ -13,7 +14,7 @@ import './App.css';
 
 function randomize(){
   //outputs a random 6 digit string with # in front to make randomized hex code
-  var randColor = "#" + Math.floor(Math.random()*16777215).toString(16);
+  const randColor = "#" + Math.floor(Math.random()*16777215).toString(16);
   //alert(randomColor);
 
   return randColor;
@@ -22,13 +23,13 @@ function randomize(){
 
 function insertRandomColor(){
   //calls randomize() then inserts into correct body <div>
-  var insertColor = randomize();
+  const insertColor = randomize();
   
   //alert(insertColor);
   console.log(insertColor);
 
-  var getHeaderElem = document.getElementById('headerID')!;
-  var getBodyElem = document.getElementById('bodyID')!;
+  const getHeaderElem = document.getElementById('headerID')!;
+  const getBodyElem = document.getElementById('bodyID')!;
 
   getHeaderElem.style.backgroundColor = insertColor;
   getBodyElem.style.backgroundColor = insertColor;
@@ -41,8 +42,8 @@ function insertRandomColor(){
 
 
 function resetColor() {
-  var getBodyElem = document.getElementById('bodyID')!;
-  var getHeaderElem = document.getElementById('headerID')!;
+  const getBodyElem = document.getElementById('bodyID')!;
+  const getHeaderElem = document.getElementById('headerID')!;
   //console.log(getBodyElem.style.backgroundColor);
 
   //TODO fix this alert. console prints rbg values, not sure why
@@ -54,43 +55,37 @@ function resetColor() {
   getHeaderElem.style.backgroundColor = "#123456";
 }
 
-function RBGTextChange() {
-  var getBodyElem = document.getElementById('bodyID')!;
-  alert(getBodyElem.style.backgroundColor);
 
-}
-
-function Example() {
-  const [count, setCount] = useState(0);
-  return (
-    <div>
-      <p>You clicked {count} times</p>
-      <button onClick={() => setCount(count + 1)}>
-        Click me
-      </button>
-    </div>
-  );
-}
 
 function ModeSelect() {
   //const mode = useState('RGB');
   //alert(mode);
-  useEffect(() => {
-    console.log('should be on startup');
-  }, []);
-  useEffect(() => {
-    console.log('should be on startup or when change happens');
-  });
+  const [count, setCount] = useState(0);
+  const [mode, setMode] = useState<string>("");
+
+
+  function changeModeHex() {
+    console.log('test1= ',mode);
+    setMode("Hex");
+    console.log('test2= ',mode);
+  };
+  function changeModeRGB(){
+    console.log('test1= ',mode);
+    setMode("RGB");
+    console.log('test2= ',mode);
+  };
+
+  console.log('test3= ', mode);
+  //
+
 
   return(
-    <div className="dropdown">
-      <button className="dropbtn">Custom</button>
-      <div className="dropdown-content" style={{right:10}}>
-        <div><button>rgb</button></div>
-        <div><button>Hex Values</button></div>
-        <div><button >color picker</button></div>
+    <div>
+      <p>You clicked {count} times</p>
+      <button className="button-action" onClick={() => setCount(count + 1)}>Click me</button>
 
-      </div>
+      <div><button className="button-action" onClick={changeModeHex}>Hex</button></div>
+      <div><button className="button-action" onClick={changeModeRGB}>RGB</button></div>
     </div>
   );
 }
@@ -118,10 +113,7 @@ React.useEffect(() => {
 });
 **/
 
-var hexSiteColor = '123456';
-var RGBred = '18';
-var RGBgreen = '52';
-var RGBblue = '86';
+
 //TODO add correct color appearing and changing
 //TODO if RGB mode use, if hex mode use, etc for h2 and other relevant parts
 //TODO customize dropdown buttons
@@ -139,7 +131,6 @@ function App() {
 
       
       <body className="App-body" id="bodyID">
-        {Example()}
         {ModeSelect()}
  
         <div>
