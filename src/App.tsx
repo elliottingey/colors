@@ -58,60 +58,63 @@ function resetColor() {
 
 
 function ModeSelect() {
-  //const mode = useState('RGB');
-  //alert(mode);
-  const [count, setCount] = useState(0);
-  const [mode, setMode] = useState<string>("");
+  const [mode, setMode] = useState<string>('Hex');
+  var headerLine = '';
 
-
+  //console.log('test0= ', mode);
   function changeModeHex() {
-    console.log('test1= ',mode);
+    //console.log('test1= ',mode);
     setMode("Hex");
-    console.log('test2= ',mode);
+    //console.log('test2= ',mode);
   };
   function changeModeRGB(){
-    console.log('test1= ',mode);
+    //console.log('test1= ',mode);
     setMode("RGB");
-    console.log('test2= ',mode);
+    //console.log('test2= ',mode);
   };
-
+  function changeModePicker(){
+    //console.log('test1= ',mode);
+    setMode("Picker");
+    //console.log('test2= ',mode);
+  }
   console.log('test3= ', mode);
-  //
 
+  //add if statement here to do anything with new states
+  if (mode === ''){
+    console.log('blank string in header select');
+  }
+  else if (mode === 'Hex'){
+    headerLine = 'Hex Header';
+  }
+  else if (mode === 'RGB'){
+    headerLine = 'RGB Header';
+  }
+  else if (mode === 'Picker'){
+    headerLine = 'Color Wheel Header';
+  }
+  else{
+    console.log('something broke with header select');
+  }
+
+  updateHeaderLine();
+  function updateHeaderLine(){
+    if (mode !== ''){
+      console.log('TODO header line update for mode: ',headerLine);
+    }
+  }
 
   return(
-    <div>
-      <p>You clicked {count} times</p>
-      <button className="button-action" onClick={() => setCount(count + 1)}>Click me</button>
-
-      <div><button className="button-action" onClick={changeModeHex}>Hex</button></div>
-      <div><button className="button-action" onClick={changeModeRGB}>RGB</button></div>
-    </div>
+      <div>
+        <div className="dropdown">
+        <button className="dropbtn">Custom</button>
+          <div className="dropdown-content" style={{right:10}}></div>
+            <div><button className="button-action" onClick={changeModeHex}>Hex</button></div>
+            <div><button className="button-action" onClick={changeModeRGB}>RGB</button></div>
+            <div><button className="button-action" onClick={changeModePicker}>Color Wheel</button></div>
+          </div>
+        </div>
   );
 }
-
-/*
-// this will run when the component mounts and anytime the stateful data changes
-React.useEffect(() => {
-  alert('Hey, Nads here!');
-});
-
-// this will run, when the component is first initialized
-React.useEffect(() => {
-  alert('Hey, Nads here!');
-}, []);
-
-// this will run only when count state changes
-React.useEffect(() => {
-  fetch('nads').then(() => setLoaded(true));
-}, [count]);
-
-// this will run when the component is destroyed or before the component is removed from UI.
-React.useEffect(() => {
-  alert('Hey, Nads here');
-  return () => alert('Goodbye Component');
-});
-**/
 
 
 //TODO add correct color appearing and changing
@@ -142,9 +145,9 @@ function App() {
           <div className="dropdown">
             <button className="dropbtn">Custom</button>
             <div className="dropdown-content" style={{right:10}}>
-              <div><button className="custom-drop-btn">rgb</button></div>
-              <div><button className="custom-drop-btn">Hex Values</button></div>
-              <div><button className="custom-drop-btn">color picker</button></div>
+              <div><button className="button-action" onClick={changeModeHex}>Hex</button></div>
+              <div><button className="button-action" onClick={changeModeRGB}>RGB</button></div>
+              <div><button className="button-action" onClick={changeModePicker}>Color Wheel</button></div>
               <div><a href="#">Link 3</a></div>
             </div>
           </div>
