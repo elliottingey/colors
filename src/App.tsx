@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import { createImportSpecifier } from 'typescript';
+import React, { useState } from 'react';
 import './App.css';
 
 
@@ -58,8 +57,7 @@ function resetColor() {
 
 
 function ModeSelect() {
-  const [mode, setMode] = useState<string>('Hex');
-  var headerLine = '';
+  const [mode, setMode] = useState<string>('');
 
   //console.log('test0= ', mode);
   function changeModeHex() {
@@ -77,8 +75,21 @@ function ModeSelect() {
     setMode("Picker");
     //console.log('test2= ',mode);
   }
-  console.log('test3= ', mode);
-
+  console.log('current mode= ', mode);
+  return(
+    <div>
+      <div className="dropdown">
+      <button className="dropbtn">Custom</button>
+        <div className="dropdown-content" style={{right:10}}></div>
+          <div><button className="bruh" onClick={changeModeHex}>Hex</button></div>
+          <div><button className="bruh" onClick={changeModeRGB}>RGB</button></div>
+          <div><button className="bruh" onClick={changeModePicker}>Color Wheel</button></div>
+        </div>
+      </div>
+  );
+}
+/*
+function HeaderUpdate() {
   //add if statement here to do anything with new states
   if (mode === ''){
     console.log('blank string in header select');
@@ -115,7 +126,7 @@ function ModeSelect() {
         </div>
   );
 }
-
+**/
 
 //TODO add correct color appearing and changing
 //TODO if RGB mode use, if hex mode use, etc for h2 and other relevant parts
@@ -145,10 +156,7 @@ function App() {
           <div className="dropdown">
             <button className="dropbtn">Custom</button>
             <div className="dropdown-content" style={{right:10}}>
-              <div><button className="button-action" onClick={changeModeHex}>Hex</button></div>
-              <div><button className="button-action" onClick={changeModeRGB}>RGB</button></div>
-              <div><button className="button-action" onClick={changeModePicker}>Color Wheel</button></div>
-              <div><a href="#">Link 3</a></div>
+              {ModeSelect()}
             </div>
           </div>
 
