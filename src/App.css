@@ -129,10 +129,17 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
 
 .h1title {
-  margin-bottom: 0px;
+  margin-bottom: 10px;
+}
+
+.h2title {
+  margin-top: 30px;
+  margin-bottom: 5px;
+}
+
+.h2title2 {
+  margin-top: 5px;
+  margin-bottom: 40px;
 }
