@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 
 
@@ -55,39 +55,35 @@ function resetColor() {
 }
 
 
-
-function ModeSelect() {
+/*
+function ModeSelect(modeEnter: string) {
   const [mode, setMode] = useState<string>('');
 
-  //console.log('test0= ', mode);
-  function changeModeHex() {
-    //console.log('test1= ',mode);
-    setMode("Hex");
-    //console.log('test2= ',mode);
-  };
-  function changeModeRGB(){
-    //console.log('test1= ',mode);
-    setMode("RGB");
-    //console.log('test2= ',mode);
-  };
-  function changeModePicker(){
-    //console.log('test1= ',mode);
-    setMode("Picker");
-    //console.log('test2= ',mode);
-  }
-  console.log('current mode= ', mode);
-  return(
+  useEffect(() => {
+
+    function handleModeEnter(modeHandle: string){
+      setMode(modeHandle);
+      console.log(modeHandle);
+    };
+  });
+
+    console.log(mode);
+}
+**/
+
+function Bruh(numberEnter: number){
+  const [num, setNum] = useState(0);
+
+  return (
     <div>
-      <div className="dropdown">
-      <button className="dropbtn">Custom</button>
-        <div className="dropdown-content" style={{right:10}}></div>
-          <div><button className="bruh" onClick={changeModeHex}>Hex</button></div>
-          <div><button className="bruh" onClick={changeModeRGB}>RGB</button></div>
-          <div><button className="bruh" onClick={changeModePicker}>Color Wheel</button></div>
-        </div>
-      </div>
+      <p>You clicked {num} times</p>
+      <button onClick={() => setNum(numberEnter)}>
+        Click me
+      </button>
+    </div>
   );
 }
+
 /*
 function HeaderUpdate() {
   //add if statement here to do anything with new states
@@ -145,7 +141,20 @@ function App() {
 
       
       <body className="App-body" id="bodyID">
-        {ModeSelect()}
+      {Bruh(8)}
+      {Bruh(10)}
+
+            <div>
+      <div className="dropdown">
+      <button className="dropbtn">Custom</button>
+        <div className="dropdown-content" style={{right:10}}></div>
+
+          <div><button className="bruh">Hex</button></div>
+          <div><button className="bruh">RGB</button></div>
+          <div><button className="bruh">Color Wheel</button></div>
+
+        </div>
+      </div>
  
         <div>
           <button className="button-action" onClick={insertRandomColor}>Randomize</button>
@@ -156,7 +165,7 @@ function App() {
           <div className="dropdown">
             <button className="dropbtn">Custom</button>
             <div className="dropdown-content" style={{right:10}}>
-              {ModeSelect()}
+              
             </div>
           </div>
 
