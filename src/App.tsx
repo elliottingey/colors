@@ -1,44 +1,15 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 
 
 
-var mode ='RGB'
-var colorType = 'RGB';
 
 
-function modeCheck(modeSelect: string){
-  if (modeSelect === 'RGB'){
-    mode = 'RGB';
-  }
-  else if (modeSelect === 'HEX'){
-    mode = 'HEX';
-  }
-  else if (modeSelect === 'picker'){
-    mode = 'picker';
-  }
-  modeHeader();
-  //alert(mode);
-  return mode;
-}
 
 //TODO add function here to find appropriate values
 
 //TODO add image of color picker
-function modeHeader(){
-  //var modeSelect = modeCheck(mode);
-  var colorHeader;
-  if (mode === 'RGB'){
-    colorHeader = 'Selected RGB Colors:  Red:{RGBred}  Green:{RGBgreen}  Blue:{RGBblue}';
-  }
-  else if (mode === 'HEX'){
-    colorHeader = 'Selected Hex Code: #';
-  }
-  else if (mode === 'picker'){
-    colorHeader = 'Selected RGB Colors:  Red:{RGBred}  Green:{RGBgreen}  Blue:{RGBblue}';
-  }
-  return colorHeader;
-}
+
 
 function randomize(){
   //outputs a random 6 digit string with # in front to make randomized hex code
@@ -90,16 +61,62 @@ function RBGTextChange() {
 }
 
 function Example() {
-  
   const [count, setCount] = useState(0);
-
   return (
     <div>
-      <p>{count} times</p>
-      <button onClick={() => setCount(count + 1)} >Click Me Bruh</button>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>
+        Click me
+      </button>
     </div>
   );
 }
+
+function ModeSelect() {
+  //const mode = useState('RGB');
+  //alert(mode);
+  useEffect(() => {
+    console.log('should be on startup');
+  }, []);
+  useEffect(() => {
+    console.log('should be on startup or when change happens');
+  });
+
+  return(
+    <div className="dropdown">
+      <button className="dropbtn">Custom</button>
+      <div className="dropdown-content" style={{right:10}}>
+        <div><button>rgb</button></div>
+        <div><button>Hex Values</button></div>
+        <div><button >color picker</button></div>
+
+      </div>
+    </div>
+  );
+}
+
+/*
+// this will run when the component mounts and anytime the stateful data changes
+React.useEffect(() => {
+  alert('Hey, Nads here!');
+});
+
+// this will run, when the component is first initialized
+React.useEffect(() => {
+  alert('Hey, Nads here!');
+}, []);
+
+// this will run only when count state changes
+React.useEffect(() => {
+  fetch('nads').then(() => setLoaded(true));
+}, [count]);
+
+// this will run when the component is destroyed or before the component is removed from UI.
+React.useEffect(() => {
+  alert('Hey, Nads here');
+  return () => alert('Goodbye Component');
+});
+**/
 
 var hexSiteColor = '123456';
 var RGBred = '18';
@@ -115,14 +132,16 @@ function App() {
 
      
       <h1 className="h1title"> Background Color Selector</h1>
-      <h2 className="h2title">Color Formatting Selected: {modeCheck(mode)}</h2>
-      <h2 className="h2title2">{modeHeader}</h2>
+      <h2 className="h2title">Color Formatting Selected: RGB</h2>
+      <h2 className="h2title2">Colors: R bruh G: bruh B: bruh</h2>
 
       </header>
 
       
       <body className="App-body" id="bodyID">
         {Example()}
+        {ModeSelect()}
+ 
         <div>
           <button className="button-action" onClick={insertRandomColor}>Randomize</button>
           <button className="button-action" onClick={resetColor}>Reset</button>
