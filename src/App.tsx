@@ -27,12 +27,14 @@ function insertRandomColor(){
   getHeaderElem.style.backgroundColor = insertColor;
   getBodyElem.style.backgroundColor = insertColor;
 
+  //RBGTextChange();
   return insertColor;
 }
+//TODO make function that sees what version the website is in (RBG or HEX),
+  //then chooses correct function to display text
 
 
-
-function resetColor(){
+function resetColor() {
   var getBodyElem = document.getElementById('bodyID')!;
   var getHeaderElem = document.getElementById('headerID')!;
   //console.log(getBodyElem.style.backgroundColor);
@@ -44,6 +46,12 @@ function resetColor(){
   
   getBodyElem.style.backgroundColor = "#123456";
   getHeaderElem.style.backgroundColor = "#123456";
+}
+
+function RBGTextChange() {
+  var getBodyElem = document.getElementById('bodyID')!;
+  alert(getBodyElem.style.backgroundColor);
+
 }
 
 
@@ -74,7 +82,7 @@ function App() {
           <div className="dropdown">
             <button className="dropbtn">Custom</button>
             <div className="dropdown-content" style={{right:10}}>
-              <a href="#">Link 1</a>
+              <button className="button-action" onClick={insertRandomColor}>Randomize</button>
               <a href="#">Link 2</a>
               <a href="#">Link 3</a>
             </div>

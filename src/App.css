@@ -5,7 +5,7 @@
 
 .button-action {
   background-color: rgb(206, 206, 206);
-  border: 1px solid #d5d9d9;
+  border: 1.5px solid #000000;
   border-radius: 8px;
   box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
   box-sizing: border-box;
@@ -41,7 +41,7 @@
 
 .dropbtn {
   background-color: rgb(206, 206, 206);
-  border: 1px solid #d5d9d9;
+  border: 1.5px solid #000000;
   border-radius: 8px;
   box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
   box-sizing: border-box;
@@ -115,7 +115,7 @@
   font-size: calc(10px + 2vmin);
   color: white;
   -webkit-text-fill-color: white;
-  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-width: 1.5px;
   -webkit-text-stroke-color: black;
 }
 
