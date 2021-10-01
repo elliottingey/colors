@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { Reducer, useState } from 'react';
 
 import './App.css';
 
@@ -56,23 +56,42 @@ function resetColor() {
   getHeaderElem.style.backgroundColor = "#123456";
 }
 
+function RGBselection(red:number,green:number,blue:number){
+  const [selec, setSelec] = useState(0);
+  
 
+  return(
+  <form>
+  <p>
+    Red:
+    <input type="text" name="name" />
+  </p>
+  <p>
+    Green:
+    <input type="text" name="name" />
+  </p>
+  <p>
+    Blue:
+    <input type="text" name="name" />
+  </p>
+  <input type="submit" value="Submit" />
+</form>
+  );
+}
 
 
 function ColorValSelection() {
   const [colorVal, setColorVal] = useState('');
 
   if(colorVal === 'Hex'){
-    console.log('1 bruh');
+
     
   }
   else if(colorVal === 'RGB'){
-    console.log('2 bruh');
-    
+    //RGBselection(0,0,0);
   }
   else if(colorVal === 'Color Wheel'){
-    console.log('3 bruh');
-    
+
   }
 
 
@@ -85,7 +104,7 @@ function ColorValSelection() {
   </div>
   <div>
     <div className="dropdown">
-      <button className="dropbtn">Custom</button>
+      <button className="dropbtn">Customize Colors</button>
       <div className="dropdown-content" style={{right:10}}>
         <div><button className="custom-drop-btn" onClick={() => setColorVal('Hex')}>Hex</button></div>
         <div><button className="custom-drop-btn" onClick={() => setColorVal('RGB')}>RGB</button></div>
@@ -93,13 +112,12 @@ function ColorValSelection() {
       </div>
     </div>
       <div className="dropdown">
-        <button className="dropbtn">History</button>
+        <button className="dropbtn">Color History</button>
         <div className="dropdown-content" style={{left:10}}>
-          <div><button className="custom-drop-btn">rgb</button></div>
-          <div><button className="custom-drop-btn">Hex Values</button></div>
-          <div><button className="custom-drop-btn">hsla</button></div>
-          <div><button className="custom-drop-btn">RBG</button></div>
-          <div><a href="#">Link 3</a></div>
+          <div><button className="custom-drop-btn"></button></div>
+          <div><button className="custom-drop-btn"></button></div>
+          <div><button className="custom-drop-btn"></button></div>
+          <div><button className="custom-drop-btn"></button></div>
         </div>
       </div>
   </div>
@@ -115,15 +133,15 @@ function headerSet(count: number) {
 
   if(count === 1){
     headerText = 'Color Formatting Selected: #';
-    //console.log('1 bruh moment');
+
   }
   else if(count === 2){
     headerText = 'Color Formatting Selected: RGB';
-    //console.log('2 bruh')
+
   }
   else if(count === 3){
-    headerText = 'Color Formatting Selected: ';
-    //console.log('3 bruh')
+    headerText = 'Color Formatting Selected: Color Wheel';
+
   }
   // Similar to componentDidMount and componentDidUpdate:  useEffect(() => {    // Update the document title using the browser API    document.title = `You clicked ${count} times`;  });
   return headerText;
@@ -142,7 +160,7 @@ function App() {
       <h1 className="h1title"> Background Color Selector</h1>
       
       
-      <h2 className="h2title2">Colors: R bruh G: bruh B: bruh</h2>
+      <h2 className="h2title2">Colors: R: __ G: __ B: __</h2>
 
       </header>
 
@@ -152,7 +170,6 @@ function App() {
 
       {ColorValSelection()}
       
-
 
       </body>
 
