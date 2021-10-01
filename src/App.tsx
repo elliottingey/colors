@@ -56,89 +56,77 @@ function resetColor() {
 
 
 
-function Example() {
-  const [count, setCount] = useState(0);
+function ColorValSelection() {
+  const [colorVal, setColorVal] = useState('');
 
-  if(count === 1){
-    console.log('1 bruh')
-    headerHex(1);
+  if(colorVal === 'Hex'){
+    console.log('1 bruh');
+    headerSet(1);
   }
-  else if(count === 2){
-    console.log('2 bruh')
+  else if(colorVal === 'RGB'){
+    console.log('2 bruh');
+    headerSet(2);
   }
-  else if(count === 3){
-    console.log('3 bruh')
+  else if(colorVal === 'Color Wheel'){
+    console.log('3 bruh');
+    headerSet(1);
   }
-  // Similar to componentDidMount and componentDidUpdate:  useEffect(() => {    // Update the document title using the browser API    document.title = `You clicked ${count} times`;  });
+
+
   return (
-    <div>
-      <p>You clicked {count} times</p>
-      <button onClick={() => setCount(1)}>Click me</button>
-      <button onClick={() => setCount(2)}>Click me</button>
-      <button onClick={() => setCount(3)}>Click me</button>
+<div>
+  <h2 className="h2title2">You clicked {colorVal} times</h2>
+  <div>
+    <button className="button-action" onClick={insertRandomColor}>Randomize</button>
+    <button className="button-action" onClick={resetColor}>Reset</button>
+  </div>
+  <div>
+    <div className="dropdown">
+      <button className="dropbtn">Custom</button>
+      <div className="dropdown-content" style={{right:10}}>
+        <div>
+        <button onClick={() => setColorVal('Hex')}>Hex</button>
+        <button onClick={() => setColorVal('RGB')}>RGB</button>
+        <button onClick={() => setColorVal('Color Wheel')}>Color Wheel</button>
+        </div>
+      </div>
     </div>
+      <div className="dropdown">
+        <button className="dropbtn">History</button>
+        <div className="dropdown-content" style={{left:10}}>
+          <div><button className="custom-drop-btn">rgb</button></div>
+          <div><button className="custom-drop-btn">Hex Values</button></div>
+          <div><button className="custom-drop-btn">hsla</button></div>
+          <div><button className="custom-drop-btn">RBG</button></div>
+          <div><a href="#">Link 3</a></div>
+        </div>
+      </div>
+  </div>
+</div>
   );
 }
 
 
 
-function headerHex(count: number) {
+function headerSet(count: number) {
   var headerText = ''; 
 
   if(count === 1){
     headerText = 'Color Formatting Selected: #';
-    console.log('1 bruh moment');
+    //console.log('1 bruh moment');
   }
   else if(count === 2){
+    headerText = 'Color Formatting Selected: RGB';
     //console.log('2 bruh')
   }
   else if(count === 3){
+    headerText = 'Color Formatting Selected: ';
     //console.log('3 bruh')
   }
   // Similar to componentDidMount and componentDidUpdate:  useEffect(() => {    // Update the document title using the browser API    document.title = `You clicked ${count} times`;  });
   return headerText;
 }
 
-
-/*
-function HeaderUpdate() {
-  //add if statement here to do anything with new states
-  if (mode === ''){
-    console.log('blank string in header select');
-  }
-  else if (mode === 'Hex'){
-    headerLine = 'Hex Header';
-  }
-  else if (mode === 'RGB'){
-    headerLine = 'RGB Header';
-  }
-  else if (mode === 'Picker'){
-    headerLine = 'Color Wheel Header';
-  }
-  else{
-    console.log('something broke with header select');
-  }
-
-  updateHeaderLine();
-  function updateHeaderLine(){
-    if (mode !== ''){
-      console.log('TODO header line update for mode: ',headerLine);
-    }
-  }
-
-  return(
-      <div>
-        <div className="dropdown">
-        <button className="dropbtn">Custom</button>
-          <div className="dropdown-content" style={{right:10}}></div>
-            <div><button className="button-action" onClick={changeModeHex}>Hex</button></div>
-            <div><button className="button-action" onClick={changeModeRGB}>RGB</button></div>
-            <div><button className="button-action" onClick={changeModePicker}>Color Wheel</button></div>
-          </div>
-        </div>
-  );
-}
-**/
 
 //TODO add correct color appearing and changing
 //TODO if RGB mode use, if hex mode use, etc for h2 and other relevant parts
@@ -150,44 +138,18 @@ function App() {
 
      
       <h1 className="h1title"> Background Color Selector</h1>
-      <h2 className="h2title">{headerHex(1)}</h2>
+      
+      
       <h2 className="h2title2">Colors: R bruh G: bruh B: bruh</h2>
 
       </header>
 
       
       <body className="App-body" id="bodyID">
-      {Example()}
+      {ColorValSelection()}
       
-        <div>
-          <button className="button-action" onClick={insertRandomColor}>Randomize</button>
-          <button className="button-action" onClick={resetColor}>Reset</button>
-        </div>
-
-        <div>
-          <div className="dropdown">
-            <button className="dropbtn">Custom</button>
-            <div className="dropdown-content" style={{right:10}}>
-             
-
-              
-            </div>
-          </div>
 
 
-          <div className="dropdown">
-            <button className="dropbtn">History</button>
-            <div className="dropdown-content" style={{left:10}}>
-              <div><button className="custom-drop-btn">rgb</button></div>
-              <div><button className="custom-drop-btn">Hex Values</button></div>
-              <div><button className="custom-drop-btn">hsla</button></div>
-              <div><button className="custom-drop-btn">RBG</button></div>
-              <div><a href="#">Link 3</a></div>
-            </div>
-          </div>
-
-
-        </div>
       </body>
 
     </div>
