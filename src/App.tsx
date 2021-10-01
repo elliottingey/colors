@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
+
 import './App.css';
 
 
@@ -9,6 +10,7 @@ import './App.css';
 //TODO add function here to find appropriate values
 
 //TODO add image of color picker
+
 
 
 function randomize(){
@@ -53,6 +55,7 @@ function resetColor() {
   getBodyElem.style.backgroundColor = "#123456";
   getHeaderElem.style.backgroundColor = "#123456";
 }
+
 
 
 
@@ -145,6 +148,8 @@ function App() {
 
       
       <body className="App-body" id="bodyID">
+
+
       {ColorValSelection()}
       
 
