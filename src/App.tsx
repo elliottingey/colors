@@ -55,61 +55,48 @@ function resetColor() {
 }
 
 
-/*
-function ModeSelect(modeEnter: string) {
-  const [mode, setMode] = useState<string>('');
 
-  useEffect(() => {
+function Example() {
+  const [count, setCount] = useState(0);
 
-    function handleModeEnter(modeHandle: string){
-      setMode(modeHandle);
-      console.log(modeHandle);
-    };
-  });
-
-    console.log(mode);
+  if(count === 1){
+    console.log('1 bruh')
+    headerHex(1);
+  }
+  else if(count === 2){
+    console.log('2 bruh')
+  }
+  else if(count === 3){
+    console.log('3 bruh')
+  }
+  // Similar to componentDidMount and componentDidUpdate:  useEffect(() => {    // Update the document title using the browser API    document.title = `You clicked ${count} times`;  });
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(1)}>Click me</button>
+      <button onClick={() => setCount(2)}>Click me</button>
+      <button onClick={() => setCount(3)}>Click me</button>
+    </div>
+  );
 }
 
 
 
+function headerHex(count: number) {
+  var headerText = ''; 
 
-
- useEffect(() => {setMode(modeEnter)
-  },[modeEnter]);
-
-
-**/
-function ModeSelect(modeEnter: string) {
-  const [mode, setMode] = useState<string>('');
-  console.log('current mode: ',mode);
-
-  
-  useEffect(function modeSelectHex(){
-    if (modeEnter === 'Hex'){
-      setMode(modeEnter);
-      console.log('Hex');
-    }
-  },[modeEnter]);
-
-  useEffect(function modeSelectRGB(){
-    if (modeEnter === 'RGB'){
-      setMode(modeEnter);
-      console.log('RGB');
-    }
-  },[modeEnter]);
-
-  useEffect(function modeSelectPicker(){
-    if (modeEnter === 'Picker'){
-      setMode(modeEnter);
-      console.log('Picker');
-    }
-  },[modeEnter]);
-
-  
-  return (
-    <button className="button-hack" onClick={() => setMode(modeEnter)}>1</button>
-
-  );
+  if(count === 1){
+    headerText = 'Color Formatting Selected: #';
+    console.log('1 bruh moment');
+  }
+  else if(count === 2){
+    //console.log('2 bruh')
+  }
+  else if(count === 3){
+    //console.log('3 bruh')
+  }
+  // Similar to componentDidMount and componentDidUpdate:  useEffect(() => {    // Update the document title using the browser API    document.title = `You clicked ${count} times`;  });
+  return headerText;
 }
 
 
@@ -163,15 +150,15 @@ function App() {
 
      
       <h1 className="h1title"> Background Color Selector</h1>
-      <h2 className="h2title">Color Formatting Selected: RGB</h2>
+      <h2 className="h2title">{headerHex(1)}</h2>
       <h2 className="h2title2">Colors: R bruh G: bruh B: bruh</h2>
 
       </header>
 
       
       <body className="App-body" id="bodyID">
-
- 
+      {Example()}
+      
         <div>
           <button className="button-action" onClick={insertRandomColor}>Randomize</button>
           <button className="button-action" onClick={resetColor}>Reset</button>
@@ -181,9 +168,7 @@ function App() {
           <div className="dropdown">
             <button className="dropbtn">Custom</button>
             <div className="dropdown-content" style={{right:10}}>
-              {ModeSelectHex('Hex')}
-              {ModeSelectRBG('RBG')}
-              {ModeSelectPicker('Picker')}
+             
 
               
             </div>
