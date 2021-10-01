@@ -143,3 +143,173 @@
   margin-top: 5px;
   margin-bottom: 40px;
 }
+
+
+
+.button-hack1 {
+  background-color: rgb(206, 206, 206);
+  border: 1.5px solid #000000;
+  border-radius: 8px;
+  box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+  box-sizing: border-box;
+  color: #0f1111;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Amazon Ember",sans-serif;
+  font-size: 13px;
+  line-height: 29px;
+  padding: 0 10px 0 11px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  width: 120px;
+  margin-bottom: 30px;
+  margin-right: 10px;
+  margin-left: 10px;
+  visibility: hidden;
+  }
+
+  .button-hack1:after {
+    background-color: rgb(206, 206, 206);
+    border: 1.5px solid #000000;
+    border-radius: 8px;
+    box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+    box-sizing: border-box;
+    color: #0f1111;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Amazon Ember",sans-serif;
+    font-size: 13px;
+    line-height: 29px;
+    padding: 0 10px 0 11px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    width: 120px;
+    margin-bottom: 30px;
+    margin-right: 10px;
+    margin-left: 10px;
+    content: 'Hex Codes';
+    visibility: visible;
+  }
+
+
+.button-hack2 {
+  background-color: rgb(206, 206, 206);
+  border: 1.5px solid #000000;
+  border-radius: 8px;
+  box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+  box-sizing: border-box;
+  color: #0f1111;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Amazon Ember",sans-serif;
+  font-size: 13px;
+  line-height: 29px;
+  padding: 0 10px 0 11px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  width: 120px;
+  margin-bottom: 30px;
+  margin-right: 10px;
+  margin-left: 10px;
+  visibility: hidden;
+  }
+
+  .button-hack2:after {
+    background-color: rgb(206, 206, 206);
+    border: 1.5px solid #000000;
+    border-radius: 8px;
+    box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+    box-sizing: border-box;
+    color: #0f1111;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Amazon Ember",sans-serif;
+    font-size: 13px;
+    line-height: 29px;
+    padding: 0 10px 0 11px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    width: 120px;
+    margin-bottom: 30px;
+    margin-right: 10px;
+    margin-left: 10px;
+    content: 'RBG';
+    visibility: visible;
+  }
+
+
+
+  .button-hack3 {
+    background-color: rgb(206, 206, 206);
+    border: 1.5px solid #000000;
+    border-radius: 8px;
+    box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+    box-sizing: border-box;
+    color: #0f1111;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Amazon Ember",sans-serif;
+    font-size: 13px;
+    line-height: 29px;
+    padding: 0 10px 0 11px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    width: 120px;
+    margin-bottom: 30px;
+    margin-right: 10px;
+    margin-left: 10px;
+    visibility: hidden;
+    }
+  
+  .button-hack3:after {
+    background-color: rgb(206, 206, 206);
+    border: 1.5px solid #000000;
+    border-radius: 8px;
+    box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+    box-sizing: border-box;
+    color: #0f1111;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Amazon Ember",sans-serif;
+    font-size: 13px;
+    line-height: 29px;
+    padding: 0 10px 0 11px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    width: 120px;
+    margin-bottom: 30px;
+    margin-right: 10px;
+    margin-left: 10px;
+    content: 'Color Wheel';
+    visibility: visible;
+  }

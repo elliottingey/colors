@@ -69,36 +69,49 @@ function ModeSelect(modeEnter: string) {
 
     console.log(mode);
 }
+
+
+
+
+
+ useEffect(() => {setMode(modeEnter)
+  },[modeEnter]);
+
+
 **/
 function ModeSelect(modeEnter: string) {
   const [mode, setMode] = useState<string>('');
+  console.log('current mode: ',mode);
 
+  
+  useEffect(function modeSelectHex(){
+    if (modeEnter === 'Hex'){
+      setMode(modeEnter);
+      console.log('Hex');
+    }
+  },[modeEnter]);
+
+  useEffect(function modeSelectRGB(){
+    if (modeEnter === 'RGB'){
+      setMode(modeEnter);
+      console.log('RGB');
+    }
+  },[modeEnter]);
+
+  useEffect(function modeSelectPicker(){
+    if (modeEnter === 'Picker'){
+      setMode(modeEnter);
+      console.log('Picker');
+    }
+  },[modeEnter]);
+
+  
   return (
-    <div>
-      <p>You entered {mode}</p>
-      <button onClick={() => setMode(modeEnter)}>
-        Click me
-      </button>
-    </div>
+    <button className="button-hack" onClick={() => setMode(modeEnter)}>1</button>
+
   );
 }
 
-
-
-
-
-function Bruh(numberEnter: number){
-  const [num, setNum] = useState(0);
-
-  return (
-    <div>
-      <p>You clicked {num} times</p>
-      <button onClick={() => setNum(numberEnter)}>
-        Click me
-      </button>
-    </div>
-  );
-}
 
 /*
 function HeaderUpdate() {
@@ -157,20 +170,7 @@ function App() {
 
       
       <body className="App-body" id="bodyID">
-      {Bruh(8)}
-      {ModeSelect('please god i want this to just work')}
 
-            <div>
-      <div className="dropdown">
-      <button className="dropbtn">Custom</button>
-        <div className="dropdown-content" style={{right:10}}></div>
-
-          <div><button className="bruh">Hex</button></div>
-          <div><button className="bruh">RGB</button></div>
-          <div><button className="bruh">Color Wheel</button></div>
-
-        </div>
-      </div>
  
         <div>
           <button className="button-action" onClick={insertRandomColor}>Randomize</button>
@@ -181,6 +181,10 @@ function App() {
           <div className="dropdown">
             <button className="dropbtn">Custom</button>
             <div className="dropdown-content" style={{right:10}}>
+              {ModeSelectHex('Hex')}
+              {ModeSelectRBG('RBG')}
+              {ModeSelectPicker('Picker')}
+
               
             </div>
           </div>
