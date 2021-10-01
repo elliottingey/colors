@@ -142,5 +142,10 @@
 .h2title2 {
   margin-top: 5px;
   margin-bottom: 40px;
+
+  color: white;
+  -webkit-text-fill-color: white;
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: black;
 }
 

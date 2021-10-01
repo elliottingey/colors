@@ -61,21 +61,21 @@ function ColorValSelection() {
 
   if(colorVal === 'Hex'){
     console.log('1 bruh');
-    headerSet(1);
+    
   }
   else if(colorVal === 'RGB'){
     console.log('2 bruh');
-    headerSet(2);
+    
   }
   else if(colorVal === 'Color Wheel'){
     console.log('3 bruh');
-    headerSet(1);
+    
   }
 
 
   return (
 <div>
-  <h2 className="h2title2">You clicked {colorVal} times</h2>
+  <h2 className="h2title2">Selected Color Type: {colorVal}</h2>
   <div>
     <button className="button-action" onClick={insertRandomColor}>Randomize</button>
     <button className="button-action" onClick={resetColor}>Reset</button>
@@ -84,11 +84,9 @@ function ColorValSelection() {
     <div className="dropdown">
       <button className="dropbtn">Custom</button>
       <div className="dropdown-content" style={{right:10}}>
-        <div>
-        <button onClick={() => setColorVal('Hex')}>Hex</button>
-        <button onClick={() => setColorVal('RGB')}>RGB</button>
-        <button onClick={() => setColorVal('Color Wheel')}>Color Wheel</button>
-        </div>
+        <div><button className="custom-drop-btn" onClick={() => setColorVal('Hex')}>Hex</button></div>
+        <div><button className="custom-drop-btn" onClick={() => setColorVal('RGB')}>RGB</button></div>
+        <div><button className="custom-drop-btn" onClick={() => setColorVal('Color Wheel')}>Color Wheel</button></div>
       </div>
     </div>
       <div className="dropdown">
@@ -105,6 +103,7 @@ function ColorValSelection() {
 </div>
   );
 }
+
 
 
 
